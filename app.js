@@ -28,7 +28,10 @@ app.controller('IndexCtrl',function($scope){
 				todo:$scope.newTodo,
 				done:false
 			});
-		$scope.newTodo='';
+			$scope.newTodo='';
+		}
+		else{
+			alert("Include some information on field to add a new item!");
 		}
 	}
 
