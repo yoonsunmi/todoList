@@ -22,11 +22,21 @@ app.controller('IndexCtrl',function($scope){
 	$scope.newTodo='';
 	
 	$scope.addTodo = function(){
-		$scope.todos.push({
-			todo:$scope.newTodo,
-			done:false
-		});
-		$scope.newTodo='';
+		
+		if ($scope.newTodo !== ''){
+			$scope.todos.push({
+				todo:$scope.newTodo,
+				done:false
+			});
+			$scope.newTodo='';
+		}
+		else{
+			alert("Include some information on field to add a new item!");
+		}
+	}
+
+	$scope.remove = function(index) {
+		this.todos.splice(index, 1);
 	}
 	
 	$scope.done = function(todo){
